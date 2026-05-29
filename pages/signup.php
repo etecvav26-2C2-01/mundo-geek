@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 ':password' => $passwordHash,
                 ]);
         
-                header('Location: ' . BASE_URL . '/index.php');
+                header('Location: ' . BASE_URL . '/pages/login.php');
                 exit;
         }else{
            $errorMessage = 'this user already exists';
@@ -108,7 +108,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <?php endif; ?>
 
                 <button type="submit" class="btn w-100 mb-3">
-                    Enter
+                    Sign Up
                 </button>
 
             </form>
