@@ -1,5 +1,5 @@
 <?php
 
-define('Base-URL', '/mundo-geek')
+define('BASE_URL', '/mundo-geek')
 
 ?>
