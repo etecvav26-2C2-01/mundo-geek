@@ -4,16 +4,9 @@ $currentpage = 'products';
 
 ?>
 
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <title>Document</title>
-</head>
-<body>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
 <main class="container py-4">
 
     <section class="mb-4">
@@ -26,36 +19,40 @@ $currentpage = 'products';
             <form action = "store.php" method = "post" enctype = "multipart/form-data">
                 <div class="mb-3">
                     <label for="name" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="name" aria-describedby="name>
+                    <input type="text" class="form-control" id="name" name = "name" aria-describedby="name">
                 <div id="nameHelp" class="form-text"></div>
                 </div>
                 <div class="mb-3">
                     <label for="description" class="form-label">Description</label>
-                    <input type="text" class="form-control" id="description">
+                    <input type="text" class="form-control" id="description" name = "description" >
+                </div>
+                <div class="mb-3">
+                    <label for="price" class="form-label">Price</label>
+                    <input class="form-control" type="number" id="price" name = "price" step ="0.01" min = "0">
                 </div>
                 <div class="mb-3">
                     <label for="stock" class="form-label">Stock</label>
-                    <input class="form-control" type="number" id="stock" min = "0">
+                    <input class="form-control" type="number" id="stock" name = "stock" min = "0">
                 </div>
                 <div class="mb-3">
                     <label for="height" class="form-label">Height</label>
-                    <input class="form-control" type="number" id="height" min = "0" step="0.001">
+                    <input class="form-control" type="number" id="height" name = "height" min = "0" step="0.001">
                 </div>
                 <div class="mb-3">
                     <label for="weight" class="form-label">Weight</label>
-                    <input class="form-control" type="number" id="weight" min = "0" step="0.001">
+                    <input class="form-control" type="number" id="weight" name = "weight" min = "0" step="0.001">
                 </div>
                 <div class="mb-3">
                     <label for="width" class="form-label">Width</label>
-                    <input class="form-control" type="number" id="width" min = "0" step="0.001">
+                    <input class="form-control" type="number" id="width" name = "width" min = "0" step="0.001">
                 </div>
                 <div class="mb-3">
                     <label for="length" class="form-label">Length</label>
-                    <input class="form-control" type="number" id="length" min = "0" step="0.001">
+                    <input class="form-control" type="number" id="length" name = "length" min = "0" step="0.001">
                 </div>
                 <div class="mb-3">
                     <label for="image" class="form-label">Input file</label>
-                    <input class="form-control" type="file" id="image" accept="image/png, image/jpeg, image/webp">
+                    <input class="form-control" type="file" id="image" name = "image" accept="image/png, image/jpeg, image/jpg, image/webp">
                 </div>
                 <div class="mb-3 form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -66,5 +63,4 @@ $currentpage = 'products';
         </div>
     </section>
 </main>
-</body>
-</html>
+
