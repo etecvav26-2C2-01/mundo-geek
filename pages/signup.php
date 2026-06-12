@@ -12,7 +12,7 @@ if (isset($_GET['lang']) && in_array($_GET['lang'], $allowedLanguages)) {
 $lang = $_SESSION['lang'] ?? 'en-us';
 require_once __DIR__ . '/../lang/' . $lang . '.php';
 
-if (isset($_SESSION['user'])) {
+if (isset($_SESSION['user_id'])) {
     header('Location: '. BASE_URL .'/pages/index.php');
     exit;
 }
@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
     
-        if (!$user) {
+        try{
             $passwordHash = password_hash($password, PASSWORD_DEFAULT);
             
             $sql = "INSERT INTO users (username, password) VALUES (:username, :password)";
@@ -43,7 +43,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
                 header('Location: ' . BASE_URL . '/pages/login.php');
                 exit;
-        }else{
+            
+        }catch (PDOException $e){
            $errorMessage = 'this user already exists';
         }
     }
@@ -128,3 +129,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
+</html>
