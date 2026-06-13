@@ -1,9 +1,11 @@
 <?php
-session_start();
+
 $allowedLanguages = ["en-us", "pt-br"];
 
 require_once __DIR__ . '/../config/database.php';
 require_once __DIR__ . '/../config/app.php';
+
+require_once __DIR__ . '/../includes/header.php';
 
 if (isset($_GET['lang']) && in_array($_GET['lang'], $allowedLanguages)) {
     $_SESSION['lang'] = $_GET['lang'];
@@ -45,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 exit;
             
         }catch (PDOException $e){
-           $errorMessage = $text['Error_Signup'];
+           $errorMessage = $text['error_signup'];
         }
     }
 }
@@ -72,13 +74,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 
             </div>
             
-            <h2 class="h4 mb-3">Sign Up</h2>
+            <h2 class="h4 mb-3"><?= $text['signup'] ?></h2>
 
             <form method="post" action="signup.php">
 
                 <div class="mb-3">
                     <label for="username" class="form-label">
-                        <?= $text['Username'] ?>
+                        <?= $text['username'] ?>
                     </label>
                     <input 
                         type="text" 
@@ -91,7 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <div class="mb-3">
                     <label for="password" class="form-label">
-                        <?= $text['Password'] ?>
+                        <?= $text['password'] ?>
                     </label>
                     <input 
                         type="password" 
@@ -109,7 +111,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <?php endif; ?>
 
                 <button type="submit" class="btn w-100 mb-3">
-                    Sign Up
+                    <?= $text['signup'] ?>
                 </button>
 
             </form>
@@ -127,6 +129,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </section>
 
 </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <?php require_once __DIR__ . '/../includes/footer.php'; ?>
 </body>
 </html>
