@@ -20,10 +20,10 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <section class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
         <div>
-            <h1>Products</h1>
-            <p>Products Management</p>
+            <h1><?= $text['products'] ?></h1>
+            <p><?= $text['products_management'] ?></p>
         </div>
-        <a href = "create.php" class = "btn tf-btn-primary">New Product</a>
+        <a href = "create.php" class = "btn tf-btn-primary"><?= $text['new_product'] ?></a>
     </section>
 
     <section class="card tf-card">
@@ -33,9 +33,9 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             <div class="text-center py-5">
 
-                <h3>No product found</h3>
+                <h3><?= $text['no_product_found'] ?></h3>
 
-                <a href = "create.php" class = "btn tf-btn-primary">Create Product</a>
+                <a href = "create.php" class = "btn tf-btn-primary"><?= $text['create_product'] ?></a>
 
             </div>
             <?php else: ?>
@@ -52,7 +52,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 >
                             <?php else: ?>
                                 <div class="tf-product-card-placeholder">
-                                    <p>No image</p>
+                                    <p><?= $text['no_image'] ?></p>
                                 </div>
                             <?php endif; ?>
                             <div class="card-body d-flex flex-column">
@@ -64,7 +64,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 </p>
                                 <div class="mb-3">
                                     <span class="badge text-bg-light">
-                                        $ <?= number_format($product['price'], 2, ',', '.')?>
+                                        R$ <?= number_format($product['price'], 2, ',', '.')?>
                                     </span>
                                     <span class="badge text-bg-light">
                                         <?= htmlspecialchars($product['stock']) ?>
