@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             header('Location: '. BASE_URL .'/pages/index.php');
             exit;
         }else{
-            $errorMessage = 'Invalid username or password'; 
+            $errorMessage = $text['Error_Login']; 
         }
     }
 }
@@ -75,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <div class="mb-3">
                     <label for="username" class="form-label">
-                        Username
+                        <?= $text['Username'] ?>
                     </label>
                     <input 
                         type="text" 
@@ -88,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <div class="mb-3">
                     <label for="password" class="form-label">
-                        Password
+                        <?= $text['Password'] ?>
                     </label>
                     <input 
                         type="password" 
