@@ -60,7 +60,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                     <div class="container text-center">
                                         <div class="d-flex gap-2 mt-3">
                                             <a href="product.php?id=<?= $product['id'] ?>" class="flex-grow-1 btn btn-primary w-100 text-nowrap">
-                                                Details
+                                                <?= $text['Details'] ?>
                                             </a>
                                             <a href="cart.php?add=<?= $product['id'] ?>" class="btn btn-primary text-nowrap">
                                                 <img style="width: 20px;" src="<?= BASE_URL ?>/assets/img/cart.svg">
