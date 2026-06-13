@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 exit;
             
         }catch (PDOException $e){
-           $errorMessage = 'this user already exists';
+           $errorMessage = $text['Error_Signup'];
         }
     }
 }
@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mundo Geek - Cadastro</title>
+    <title>Mundo Geek - Signup</title>
     
     <link href="../assets/css/style.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
@@ -78,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <div class="mb-3">
                     <label for="username" class="form-label">
-                        Username
+                        <?= $text['Username'] ?>
                     </label>
                     <input 
                         type="text" 
@@ -91,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <div class="mb-3">
                     <label for="password" class="form-label">
-                        Password
+                        <?= $text['Password'] ?>
                     </label>
                     <input 
                         type="password" 
