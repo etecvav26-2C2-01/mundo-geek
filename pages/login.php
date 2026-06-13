@@ -13,6 +13,8 @@ require_once __DIR__ . '/../lang/' . $lang . '.php';
 require_once __DIR__ . '/../config/database.php';
 require_once __DIR__ . '/../config/app.php';
 
+require_once __DIR__ . '/../includes/header.php';
+
 if (isset($_SESSION['user_id'])) {
     header('Location: '. BASE_URL .'/pages/index.php');
     exit;
@@ -128,6 +130,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </section>
 
 </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-</body>
+    <?php require_once __DIR__ . '/../includes/footer.php'; ?>
 </html>
