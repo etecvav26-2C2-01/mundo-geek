@@ -10,55 +10,55 @@ $currentpage = 'products';
 <main class="container py-4">
 
     <section class="mb-4">
-        <h1 class="fw-bold mb-1">New Product</h1>
-        <p class="text-muted mb-0">Create Product</p>
+        <h1 class="fw-bold mb-1"><?= $text['new_product'] ?></h1>
+        <p class="text-muted mb-0"><?= $text['create_product'] ?></p>
     </section>
 
     <section class="card tf-card">
         <div class="card-body">
             <form action = "store.php" method = "post" enctype = "multipart/form-data">
                 <div class="mb-3">
-                    <label for="name" class="form-label">Name</label>
+                    <label for="name" class="form-label"><?= $text['name'] ?></label>
                     <input type="text" class="form-control" id="name" name = "name" aria-describedby="name">
                 <div id="nameHelp" class="form-text"></div>
                 </div>
                 <div class="mb-3">
-                    <label for="description" class="form-label">Description</label>
+                    <label for="description" class="form-label"><?= $text['description'] ?></label>
                     <input type="text" class="form-control" id="description" name = "description" >
                 </div>
                 <div class="mb-3">
-                    <label for="price" class="form-label">Price</label>
+                    <label for="price" class="form-label"><?= $text['price'] ?></label>
                     <input class="form-control" type="number" id="price" name = "price" step ="0.01" min = "0">
                 </div>
                 <div class="mb-3">
-                    <label for="stock" class="form-label">Stock</label>
+                    <label for="stock" class="form-label"><?= $text['stock'] ?></label>
                     <input class="form-control" type="number" id="stock" name = "stock" min = "0">
                 </div>
                 <div class="mb-3">
-                    <label for="height" class="form-label">Height</label>
+                    <label for="height" class="form-label"><?= $text['height'] ?></label>
                     <input class="form-control" type="number" id="height" name = "height" min = "0" step="0.001">
                 </div>
                 <div class="mb-3">
-                    <label for="weight" class="form-label">Weight</label>
+                    <label for="weight" class="form-label"><?= $text['weight'] ?></label>
                     <input class="form-control" type="number" id="weight" name = "weight" min = "0" step="0.001">
                 </div>
                 <div class="mb-3">
-                    <label for="width" class="form-label">Width</label>
+                    <label for="width" class="form-label"><?= $text['width'] ?></label>
                     <input class="form-control" type="number" id="width" name = "width" min = "0" step="0.001">
                 </div>
                 <div class="mb-3">
-                    <label for="length" class="form-label">Length</label>
+                    <label for="length" class="form-label"><?= $text['lenght'] ?></label>
                     <input class="form-control" type="number" id="length" name = "length" min = "0" step="0.001">
                 </div>
                 <div class="mb-3">
-                    <label for="image" class="form-label">Input file</label>
+                    <label for="image" class="form-label"><?= $text['input_file'] ?></label>
                     <input class="form-control" type="file" id="image" name = "image" accept="image/png, image/jpeg, image/jpg, image/webp">
                 </div>
                 <div class="mb-3 form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
                     <label class="form-check-label" for="exampleCheck1">Check me out</label>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary"><?= $text['submit'] ?></button>
             </form>
         </div>
     </section>
