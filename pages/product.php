@@ -28,7 +28,7 @@ $product = $stmt->fetch(PDO::FETCH_ASSOC);
 
                 <?php else: ?>
                     <p class="card-text">
-                        No image set to this product
+                        <?= $text['no_image_set_to_this_product'] ?>
                     </p>
                 <?php endif; ?>
 
@@ -43,21 +43,21 @@ $product = $stmt->fetch(PDO::FETCH_ASSOC);
                         <?= htmlspecialchars($product['description']) ?>
                     </p>
                     <p class="card-text fw-bold">
-                        <?= $text['Dimensions'] ?>
+                        <?= $text['dimensions'] ?>
                     </p>
                     <p class="card-text">
-                        <?= $text['Height'] ?> <?= $product['height'] ?> cm
+                        <?= $text['height'] ?> <?= $product['height'] ?> cm
                     </p>
                     <p class="card-text">
-                        <?= $text['Width'] ?> <?= $product['width'] ?> cm
+                        <?= $text['width'] ?> <?= $product['width'] ?> cm
                     </p>
                     <p class="card-text">
-                        <?= $text['Weight'] ?> <?= $product['weight'] ?> kg
+                        <?= $text['weight'] ?> <?= $product['weight'] ?> kg
                     </p>
 
                     <div class="container card-produto-botao text-center">
                         <a href="cart.php?add=<?= $product['id'] ?>" class="btn btn-primary w-100 text-nowrap">
-                            Add to Cart
+                            <?= $text['add_to_cart'] ?>
                         </a>
                     </div>
                 </div>
@@ -65,7 +65,6 @@ $product = $stmt->fetch(PDO::FETCH_ASSOC);
         </div>
     </section>
 </main>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 <?php require_once __DIR__ . '/../includes/footer.php'; ?>
 </body>
 
