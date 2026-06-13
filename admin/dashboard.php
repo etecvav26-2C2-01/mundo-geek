@@ -26,11 +26,11 @@ $total_orders = 0;
                 <div class="card w-100 rounded-bottom-4">
                     <img src="<?= BASE_URL ?>/assets/img/products-menu-top.png" class="card-img-top" alt="Products menu">
                     <div class="card-body">
-                        <h3><?= $text['Products'] ?></h3>
-                        <p><?= $text['There_Are_Currently'] ?> <?= $total_products ?> <?= $text['Registered_Products'] ?>.</p>
+                        <h3><?= $text['products'] ?></h3>
+                        <p><?= $text['there_are_currently'] ?> <?= $total_products ?> <?= $text['registered_products'] ?>.</p>
                     </div>
                     <a href="<?= BASE_URL ?>/admin/products/index.php" class="btn btn-primary w-100 text-nowrap rounded-bottom-4 rounded-top-0">
-                        <?= $text['Manage'] ?>
+                        <?= $text['manage'] ?>
                     </a>
                 </div>
             </div>
@@ -39,11 +39,11 @@ $total_orders = 0;
                 <div class="card w-100 rounded-bottom-4">
                     <img src="<?= BASE_URL ?>/assets/img/orders-banner.png" class="card-img-top" alt="Orders menu">
                     <div class="card-body">
-                        <h3><?= $text['Orders'] ?></h3>
-                        <p><?= $text['There_Are_Currently'] ?> <?= $total_orders ?> <?= $text['Registered_Orders'] ?>.</p>
+                        <h3><?= $text['orders'] ?></h3>
+                        <p><?= $text['there_are_currently'] ?> <?= $total_orders ?> <?= $text['registered_orders'] ?>.</p>
                     </div>
                     <a href="<?= BASE_URL ?>/admin/orders/index.php" class="btn btn-secondary w-100 text-nowrap rounded-bottom-4 rounded-top-0 disabled">
-                        <?= $text['Soon'] ?>
+                        <?= $text['soon'] ?>
                     </a>
                 </div>
             </div>
