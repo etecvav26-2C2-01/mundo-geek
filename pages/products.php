@@ -62,6 +62,3 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </main>
     
     <?php require_once __DIR__ . '/../includes/footer.php'; ?>
-</body>
-
-</html>
