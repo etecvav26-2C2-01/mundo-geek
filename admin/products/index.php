@@ -52,7 +52,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 >
                             <?php else: ?>
                                 <div class="tf-product-card-placeholder">
-                                    <p><?= $text['no_image'] ?></p>
+                                    <p><?= $text[''no_image_set_to_this_product''] ?></p>
                                 </div>
                             <?php endif; ?>
                             <div class="card-body d-flex flex-column">
