@@ -1,11 +1,12 @@
 <?php
 
-require_once '../includes/auth.php';
-require_once '../includes/header.php';
-require_once '../includes/navbar.php';
-require_once '../../config/database.php';
+require_once __DIR__ . '/../../config/database.php';
+require_once __DIR__ . '/../../includes/auth.php';
+require_once __DIR__ . '/../../includes/auth-admin.php';
+require_once __DIR__ . '/../../includes/header.php';
+require_once __DIR__ . '/../../includes/navbar.php';
 
-$sql = "SELECT id, name, description, price, stock, created_at, height, weight, width, length
+$sql = "SELECT id, name, description, price, image, stock, created_at, height, weight, width, length
         FROM products
         ORDER BY name ASC";
 $stmt = $conn->prepare($sql);
@@ -52,7 +53,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 >
                             <?php else: ?>
                                 <div class="tf-product-card-placeholder">
-                                    <p><?= $text[''no_image_set_to_this_product''] ?></p>
+                                    <p><?= $text['no_image_set_to_this_product'] ?></p>
                                 </div>
                             <?php endif; ?>
                             <div class="card-body d-flex flex-column">
@@ -71,8 +72,14 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                     </span>
                                 </div>
                                 <div class="d-flex gap-2">
-                                    <a href = "edit.php" <?= $product['id'] ?> class="btn btn-sm btn-outline-secondary <w-100">Edit</a>
-                                    <a href="delete.php?id=<?= $product['id'] ?>" class="btn btn-sm btn-outline-danger w-100" onclick="return confirm('<?= htmlspecialchars('confirm_delete', ENT_QUOTES) ?>');">Delete</a>
+                                    <a href="edit.php?id=<?= $product['id'] ?>" 
+                                        class="btn btn-sm btn-outline-secondary w-100"> 
+                                        <?= $text['edit']?>
+                                    </a>
+                                    <a href="delete.php?id=<?= $product['id'] ?>" 
+                                        class="btn btn-sm btn-outline-danger w-100" onclick="return confirm('<?= htmlspecialchars($text['confirm_delete'], ENT_QUOTES) ?>');">
+                                        <?= $text['delete'] ?>
+                                    </a>
                                 </div>
                             </div>
                         </article>
@@ -83,3 +90,6 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </section>
 </main>
+<?php 
+require_once __DIR__ . '/../../includes/footer.php';
+?>
