@@ -18,7 +18,6 @@ $text = [
     'manage' => 'Gerenciar',
     'name' => 'Nome',
     'new_product' => 'Novo Produto',
-    'no_image' => 'Sem imagem',
     'no_image_set_to_this_product' => 'Produto sem imagem',
     'orders' => 'Pedidos',
     'password' => 'Senha',
