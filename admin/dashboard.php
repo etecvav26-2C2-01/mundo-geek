@@ -52,6 +52,3 @@ $total_orders = 0;
     </main>
 
     <?php require_once __DIR__ . '/../includes/footer.php'; ?>
-</body>
-
-</html>
