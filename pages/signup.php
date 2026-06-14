@@ -52,18 +52,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-
-<!DOCTYPE html>
-<html lang="<?= htmlspecialchars($lang) ?>">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mundo Geek - Signup</title>
-    
-    <link href="../assets/css/style.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-</head>
-<body>
     <main class="container min-vh-100 d-flex align-items-center justify-content-center py-4">
     <section class="row w-100 shadow-lg rounded-4 overflow-hidden">
 
@@ -130,5 +118,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 </main>
     <?php require_once __DIR__ . '/../includes/footer.php'; ?>
-</body>
-</html>
