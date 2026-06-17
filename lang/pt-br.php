@@ -3,6 +3,7 @@
 $text = [
     'add_to_cart' => 'Adicionar ao carrinho',
     'created_at' => 'Criado em',
+    'confirm_delete' => 'Tem certeza que deseja deletar este produto?',
     'create_product' => 'Criar Produto',
     'delete' => 'Deletar',
     'description' => 'Descrição',
@@ -19,6 +20,7 @@ $text = [
     'name' => 'Nome',
     'new_product' => 'Novo Produto',
     'no_image_set_to_this_product' => 'Produto sem imagem',
+    'no_product_found' => 'Nenhum produto encontrado',
     'orders' => 'Pedidos',
     'password' => 'Senha',
     'price' => 'Preço',
