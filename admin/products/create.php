@@ -56,7 +56,7 @@ require_once __DIR__ . '/../../includes/navbar.php';
                     <input class="form-control" type="number" id="width" name = "width" min = "0" step="0.001" required>
                 </div>
                 <div class="mb-3">
-                    <label for="length" class="form-label"><?= $text['lenght'] ?></label>
+                    <label for="length" class="form-label"><?= $text['length'] ?></label>
                     <input class="form-control" type="number" id="length" name = "length" min = "0" step="0.001" required>
                 </div>
                 <div class="mb-3">
