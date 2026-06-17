@@ -3,7 +3,7 @@
 $text = [
     'username' => 'Username',
     'submit' => 'Submit',
-    'input_file' => 'Input File'
+    'input_file' => 'Input File',
     'signup' => 'Signup',
     'login' => 'Login',
     'password' => 'Password',
@@ -32,7 +32,7 @@ $text = [
     'price' => 'Price',
     'orders' => 'Orders',
     'registered_orders' => 'Registered Orders',
-    'registered_products' => 'Registered Products'
+    'registered_products' => 'Registered Products',
     'soon' => 'Soon',
     'there_are_currently' => 'There are Currently'
     ]
