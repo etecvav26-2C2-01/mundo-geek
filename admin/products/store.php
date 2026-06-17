@@ -40,14 +40,15 @@ if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
     }
 }
 
-$sql = "INSERT INTO products ( name, description, image, stock, weight, height, width, length)
-        Values (:name, :description, :image, :stock, :weight, :height, :width, :length)";
+$sql = "INSERT INTO products ( name, description, price, image, stock, weight, height, width, length)
+        Values (:name, :description, :price, :image, :stock, :weight, :height, :width, :length)";
 
 $stmt = $conn->prepare($sql);
 
 $stmt->execute([
     ':name' => $name,
     ':description' => $description,
+    ':price' => $price;
     ':image' => $image,
     ':stock' => $stock,
     ':weight' => $weight,
