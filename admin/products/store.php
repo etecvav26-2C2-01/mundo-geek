@@ -48,7 +48,7 @@ $stmt = $conn->prepare($sql);
 $stmt->execute([
     ':name' => $name,
     ':description' => $description,
-    ':price' => $price;
+    ':price' => $price,
     ':image' => $image,
     ':stock' => $stock,
     ':weight' => $weight,
