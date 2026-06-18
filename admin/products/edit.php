@@ -9,7 +9,7 @@ require_once __DIR__ . '/../../includes/auth-admin.php';
 require_once __DIR__ . '/../../includes/header.php';
 require_once __DIR__ . '/../../includes/navbar.php';
 
-if (isset($_POST['btn-atualizar'])) {
+if (isset($_POST['btn-edit'])) {
         
         $id = $_GET['id'];
 
@@ -64,7 +64,7 @@ if (isset($_GET['id'])){
 
     <section class="card tf-card">
         <div class="card-body">
-            <form action = "store.php" method = "post" enctype = "multipart/form-data">
+            <form method = "post" enctype = "multipart/form-data">
                 <div class="mb-3">
                     <label for="name" class="form-label"><?= $text['name'] ?></label>
                     <input type="text" class="form-control" id="name" name = "name" aria-describedby="name" value="<?= $product['name'] ?>">
@@ -98,7 +98,7 @@ if (isset($_GET['id'])){
                     <label for="length" class="form-label"><?= $text['length'] ?></label>
                     <input class="form-control" type="number" id="length" name = "length" min = "0" step="0.001"  value="<?= $product['length'] ?>">
                 </div>
-                <button type="submit" class="btn btn-primary"><?= $text['submit'] ?></button>
+                <button type="submit" class="btn btn-primary btn-edit"><?= $text['submit'] ?></button>
             </form>
         </div>
     </section>
