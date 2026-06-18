@@ -23,7 +23,7 @@ if (isset($_POST['btn-edit'])) {
         $length = trim ($_POST['length']) ?? '';
 
         
-        $sql = "UPDATE products SET  name = :name, description = :description, price = :price, stock =: stock, weight =: weight, height = :height, width =: width, length = :length WHERE id = :id";
+        $sql = "UPDATE products SET  name = :name, description = :description, price = :price, stock = :stock, weight = :weight, height = :height, width = :width, length = :length WHERE id = :id";
         $stmt = $conn->prepare($sql);
 
         $stmt->execute([
