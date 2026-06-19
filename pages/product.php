@@ -20,13 +20,14 @@ $stmt->execute([
 $product = $stmt->fetch(PDO::FETCH_ASSOC);
 ?>
 
-<main class="container min-vh-100 d-flex align-items-center justify-content-center py-4">
+<main class="container min-vh-100 d-flex justify-content-center py-4">
     <section class="row justify-content-center">
-        <div class="col-12 col-md-8 col-lg-8 w-100">
+        <div class="col-12 w-100">
             <div class="card-produto card">
                 <?php if (!empty($product['image'])): ?>
-                    <img src="<?= BASE_URL ?>/assets/uploads/products/<?= htmlspecialchars($product['image']) ?>" class="card-img-top">
-
+                    <div class="card-produto-img">
+                        <img src="<?= BASE_URL ?>/assets/uploads/products/<?= htmlspecialchars($product['image']) ?>" class="card-img-top">
+                    </div>
                 <?php else: ?>
                     <p class="card-text">
                         <?= $text['no_image_set_to_this_product'] ?>
@@ -34,10 +35,10 @@ $product = $stmt->fetch(PDO::FETCH_ASSOC);
                 <?php endif; ?>
 
                 <div class="card-body card-produto-body">
-                    <h5 class="card-title">
+                    <h5 class="card-title card-produto-titulo">
                         <?= htmlspecialchars($product['name']) ?>
                     </h5>
-                    <p class="card-text">
+                    <p class="card-text card-produto-preco">
                         R$ <?= htmlspecialchars($product['price']) ?>
                     </p>
                     <p class="card-text">
