@@ -16,7 +16,7 @@ require_once __DIR__ . '/../config/app.php';
 require_once __DIR__ . '/../includes/header.php';
 
 if (isset($_SESSION['user_id'])) {
-    header('Location: '. BASE_URL .'/pages/index.php');
+    header('Location: '. BASE_URL .'/index.php');
     exit;
 }
 
@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['user_name'] = $user['username'];
 
-            header('Location: '. BASE_URL .'/pages/index.php');
+            header('Location: '. BASE_URL .'/index.php');
             exit;
         }else{
             $errorMessage = $text['error_login']; 
