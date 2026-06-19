@@ -100,17 +100,40 @@
     transform: translateY(-2px);
 }
 
-    .card-produto-img{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+.card-img-top {
+    width: 100%;
+    max-height: 250px;
+    object-fit: contain;
+}
 
-    .card-produto-img img{
-        width: 100%;
-        max-height: 300px;
-        object-fit: contain;
-    }
+.card{
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body{
+    flex: 0;
+    margin-top: auto;
+}
+
+.dashboard-card-img{
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+
+.card-produto-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-produto-img img{
+    width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+}
 
 @media (min-width: 991px) {
     .card-produto{
