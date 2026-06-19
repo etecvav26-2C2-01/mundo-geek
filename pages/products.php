@@ -29,7 +29,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <div class="col">
                             <div class="card h-100">
                                 <?php if(!empty($product['image'])):?>
-                                    <img style="height: 80%; object-fit: contain;" src="<?= BASE_URL ?>/assets/uploads/products/<?= htmlspecialchars($product['image']) ?>" class="card-img-top">
+                                    <img src="<?= BASE_URL ?>/assets/uploads/products/<?= htmlspecialchars($product['image']) ?>" class="card-img-top">
 
                                 <?php else: ?>
                                     <p class="card-text">
