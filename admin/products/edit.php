@@ -12,7 +12,7 @@ require_once __DIR__ . '/../../includes/navbar.php';
 if (isset($_GET['id'])){
     $id = $_GET['id'];
 
-    $sql = "SELECT * FROM PRODUCTS WHERE id = :id";
+    $sql = "SELECT * FROM products WHERE id = :id";
     $stmt = $conn->prepare($sql);
     
     $stmt->execute([
