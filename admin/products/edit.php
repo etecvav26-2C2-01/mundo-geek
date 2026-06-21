@@ -9,36 +9,6 @@ require_once __DIR__ . '/../../includes/auth-admin.php';
 require_once __DIR__ . '/../../includes/header.php';
 require_once __DIR__ . '/../../includes/navbar.php';
 
-if (isset($_POST['btn-edit'])) {
-        
-        $id = $_GET['id'];
-
-        $name = trim($_POST['name']) ?? '';
-        $description = trim($_POST['description']) ?? '';
-        $price = trim($_POST['price'] ?? '');
-        $stock = trim($_POST['stock']) ?? '';
-        $height = trim($_POST['height']) ?? '';
-        $weight = trim ($_POST['weight']) ?? '';
-        $width = trim($_POST['width']) ?? '';
-        $length = trim ($_POST['length']) ?? '';
-
-        
-        $sql = "UPDATE products SET  name = :name, description = :description, price = :price, stock = :stock, weight = :weight, height = :height, width = :width, length = :length WHERE id = :id";
-        $stmt = $conn->prepare($sql);
-
-        $stmt->execute([
-        ':name' => $name,
-        ':description' => $description,
-        ':price' => $price,
-        ':stock' => $stock,
-        ':weight' => $weight,
-        ':height' => $height,
-        ':width' => $width,
-        ':length' => $length,
-        ':id' => $id
-        ]);
-}
-
 if (isset($_GET['id'])){
     $id = $_GET['id'];
 
@@ -52,6 +22,68 @@ if (isset($_GET['id'])){
 
     $product = $stmt -> fetch(PDO::FETCH_ASSOC);
 }
+
+if (isset($_POST['btn-edit'])) {
+        
+        $id = $_GET['id'];
+
+        $name = trim($_POST['name']) ?? '';
+        $description = trim($_POST['description']) ?? '';
+        $price = trim($_POST['price'] ?? '');
+        $stock = trim($_POST['stock']) ?? '';
+        $height = trim($_POST['height']) ?? '';
+        $weight = trim ($_POST['weight']) ?? '';
+        $width = trim($_POST['width']) ?? '';
+        $length = trim ($_POST['length']) ?? '';
+        $image = $product['image'];
+
+    if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
+
+        $uploadDir = '../../assets/uploads/products/';
+        if (!is_dir($uploadDir)) {
+            mkdir($uploadDir, 0755, true);
+        }
+
+        $originalName = $_FILES['image']['name'];
+        $temporaryPath = $_FILES['image']['tmp_name'];
+        $fileExtension = strtolower(pathinfo($originalName, PATHINFO_EXTENSION));
+
+        $allowedExtensions = ['jpg', 'jpeg', 'png', 'webp'];
+
+        if (!in_array($fileExtension, $allowedExtensions)) {
+            header('Location: edit.php?error=invalid_image');
+            exit;
+        }
+
+        $imageName = uniqid('product_', true) . '.' . $fileExtension;
+        $destinationPath = $uploadDir . $imageName;
+
+        if(move_uploaded_file($temporaryPath, $destinationPath)){
+            $image = $imageName;
+        }
+        if (!empty($product['image'])) {
+            unlink($uploadDir . $product['image']);
+        }
+    }
+
+        
+        $sql = "UPDATE products SET  name = :name, description = :description, image = :image, price = :price, stock = :stock, weight = :weight, height = :height, width = :width, length = :length WHERE id = :id";
+        $stmt = $conn->prepare($sql);
+
+        $stmt->execute([
+        ':name' => $name,
+        ':description' => $description,
+        ':price' => $price,
+        ':stock' => $stock,
+        ':weight' => $weight,
+        ':height' => $height,
+        ':width' => $width,
+        ':length' => $length,
+        ':image' => $image,
+        ':id' => $id
+        ]);
+}
+
 
 ?>
 
@@ -72,7 +104,7 @@ if (isset($_GET['id'])){
                 </div>
                 <div class="mb-3">
                     <label for="description" class="form-label"><?= $text['description'] ?></label>
-                    <input type="text" class="form-control" id="description" name = "description" value ="<?= $product['description']  ?>">
+                    <textarea class="form-control" id="description" name = "description"><?= $product['description']  ?></textarea>
                 </div>
                 <div class="mb-3">
                     <label for="price" class="form-label"><?= $text['price'] ?></label>
@@ -98,7 +130,11 @@ if (isset($_GET['id'])){
                     <label for="length" class="form-label"><?= $text['length'] ?></label>
                     <input class="form-control" type="number" id="length" name = "length" min = "0" step="0.001"  value="<?= $product['length'] ?>">
                 </div>
-                <button type="submit" class="btn btn-primary btn-edit"><?= $text['submit'] ?></button>
+                <div class="mb-3">
+                    <label for="image" class="form-label"><?= $text['input_file'] ?></label>
+                    <input class="form-control" type="file" id="image" name = "image" accept="image/png, image/jpeg, image/jpg, image/webp">
+                </div>
+                <button type="submit" class="btn btn-primary" name = "btn-edit"><?= $text['submit'] ?></button>
             </form>
         </div>
     </section>

@@ -47,25 +47,25 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <div class="row g-4">
                 <?php foreach ($products as $product): ?>
                     <div class="col-12 col-md-6 col-lg-4">
-                        <article class="card tf-card h-100">
+                        <article class="card tf-card h-100" admin-card-product>
                             <?php if (!empty($product['image'])): ?>
                                 <img
                                     src="../../assets/uploads/products/<?= htmlspecialchars($product['image']) ?>" 
-                                    class="tf-product-card-image"
+                                    class="admin-product-card-image"
                                     alt="<?= htmlspecialchars($product['name']) ?>"
                                 >
                             <?php else: ?>
-                                <div class="tf-product-card-placeholder">
+                                <div class="admin-product-card-placeholder">
                                     <p><?= $text['no_image_set_to_this_product'] ?></p>
                                 </div>
                             <?php endif; ?>
-                            <div class="card-body d-flex flex-column">
+                            <div class="card-body d-flex flex-column admin-body-product">
                                 <h5 class="card-title fw-bold">
                                     <?= htmlspecialchars($product['name'])?>
                                 </h5>
-                                <p class="card-text text-muted flex-grow-1">
+                                <textarea readonly class="card-text text-muted flex-grow-1 description-clamp">
                                     <?= htmlspecialchars($product['description']) ?>
-                                </p>
+                                </textarea>
                                 <div class="mb-3">
                                     <span class="badge text-bg-light">
                                         R$ <?= number_format($product['price'], 2, ',', '.')?>
