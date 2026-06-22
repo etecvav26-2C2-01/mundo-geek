@@ -36,6 +36,12 @@ $text = [
     'registered_orders' => 'Registered Orders',
     'registered_products' => 'Registered Products',
     'soon' => 'Soon',
-    'there_are_currently' => 'There are Currently'
+    'there_are_currently' => 'There are Currently',
+    'home' => 'Home',
+    'leave' => 'Leave',
+    'dashboard' => 'Dashboard',
+    'profile' => 'My profile',
+    'u-orders' => 'My orders',
+    'settings' => 'Settings',
     ]
 ?>

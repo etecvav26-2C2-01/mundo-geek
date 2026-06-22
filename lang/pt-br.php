@@ -36,4 +36,10 @@ $text = [
     'username' => 'Nome de usuário',
     'weight' => 'Peso',
     'width' => 'Largura',
+    'home'=> 'Início',
+    'leave' => 'Sair',
+    'dashboard' => 'Painel de controle',
+    'profile' => 'Meu perfil',
+    'u-orders' => 'Meus pedidos',
+    'settings' => 'Configurações',
 ];
