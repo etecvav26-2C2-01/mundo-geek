@@ -47,30 +47,30 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <div class="row g-4">
                 <?php foreach ($products as $product): ?>
                     <div class="col-12 col-md-6 col-lg-4">
-                        <article class="card tf-card h-100" admin-card-product>
+                        <article class="card tf-card h-100 admin-card">
                             <?php if (!empty($product['image'])): ?>
                                 <img
                                     src="../../assets/uploads/products/<?= htmlspecialchars($product['image']) ?>" 
-                                    class="admin-product-card-image"
+                                    class="admin-card__img"
                                     alt="<?= htmlspecialchars($product['name']) ?>"
                                 >
                             <?php else: ?>
-                                <div class="admin-product-card-placeholder">
+                                <div class="admin-card__placeholder">
                                     <p><?= $text['no_image_set_to_this_product'] ?></p>
                                 </div>
                             <?php endif; ?>
-                            <div class="card-body d-flex flex-column admin-body-product">
-                                <h5 class="card-title fw-bold">
+                            <div class="card-body d-flex flex-column admin-card__body">
+                                <h5 class="card-title fw-bold admin-card__name">
                                     <?= htmlspecialchars($product['name'])?>
                                 </h5>
-                                <textarea readonly class="card-text text-muted flex-grow-1 description-clamp">
+                                <textarea readonly class="card-text text-muted flex-grow-1 description-clamp admin-card__description">
                                     <?= htmlspecialchars($product['description']) ?>
                                 </textarea>
                                 <div class="mb-3">
-                                    <span class="badge text-bg-light">
+                                    <span class="badge text-bg-light admin-card__price">
                                         R$ <?= number_format($product['price'], 2, ',', '.')?>
                                     </span>
-                                    <span class="badge text-bg-light">
+                                    <span class="badge text-bg-light admin-card__stock">
                                         <?= htmlspecialchars($product['stock']) ?>
                                     </span>
                                 </div>
