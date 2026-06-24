@@ -24,21 +24,21 @@ require_once __DIR__ . '/../lang/' . $lang . '.php';
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="<?= BASE_URL ?>/index.php">Início</a>
+              <a class="nav-link" aria-current="page" href="<?= BASE_URL ?>/index.php"><?= $text['home']?></a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Admin
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="<?= BASE_URL ?>/admin/index.php">Início</a></li>
-                <li><a class="dropdown-item" href="<?= BASE_URL ?>/admin/dashboard.php">Dashboard</a></li>
-                <li><a class="dropdown-item" href="<?= BASE_URL ?>/admin/products/index.php">Produtos</a></li>
-                <li><a class="dropdown-item" href="<?= BASE_URL ?>/admin/orders/index.php">Pedidos</a></li>
+                <li><a class="dropdown-item" href="<?= BASE_URL ?>/admin/index.php"><?= $text['home'] ?></a></li>
+                <li><a class="dropdown-item" href="<?= BASE_URL ?>/admin/dashboard.php"><?= $text['dashboard'] ?></a></li>
+                <li><a class="dropdown-item" href="<?= BASE_URL ?>/admin/products/index.php"><?= $text['products'] ?></a></li>
+                <li><a class="dropdown-item disabled" href="<?= BASE_URL ?>/admin/orders/index.php"><?= $text['orders'] ?></a></li>
                 <li>
                   <hr class="dropdown-divider">
                 </li>
-                <li><a class="dropdown-item" href="<?= BASE_URL ?>/admin/logout.php">Sair</a></li>
+                <li><a class="dropdown-item" href="<?= BASE_URL ?>/admin/logout.php"><?= $text['leave'] ?></a></li>
               </ul>
             </li>
           </ul>
@@ -58,20 +58,20 @@ require_once __DIR__ . '/../lang/' . $lang . '.php';
               </a>
 
               <ul class="dropdown-menu dropdown-menu-end">
-                  <li><a class="dropdown-item disabled" href="profile.php">Meu Perfil</a></li>
-                  <li><a class="dropdown-item disabled" href="u-requests.php">Meus Pedidos</a></li>
-                  <li><a class="dropdown-item disabled" href="settings.php">Configurações</a></li>
+                  <li><a class="dropdown-item disabled" href="profile.php"><?= $text['profile'] ?></a></li>
+                  <li><a class="dropdown-item disabled" href="u-requests.php"><?= $text['u-orders'] ?></a></li>
+                  <li><a class="dropdown-item disabled" href="settings.php"><?= $text['settings'] ?></a></li>
 
                   <li><hr class="dropdown-divider"></li>
 
-                  <li><a class="dropdown-item text-danger" href="<?= BASE_URL ?>/admin/logout.php">Sair</a></li>
+                  <li><a class="dropdown-item text-danger" href="<?= BASE_URL ?>/admin/logout.php"><?= $text['leave'] ?></a></li>
               </ul>
             </div>
             <a href="?lang=en-us" class="btn btn-sm btn-outline-secondary">
-              EN
+              EN-US
             </a>
             <a href="?lang=pt-br" class="btn btn-sm btn-outline-secondary">
-              PT
+              PT-BR
             </a>
           </div>
         </div>
