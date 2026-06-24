@@ -47,11 +47,13 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <div class="col-12 col-md-6 col-lg-4">
                         <article class="card tf-card h-100 admin-card">
                             <?php if (!empty($product['image'])): ?>
-                                <img
-                                    src="../../assets/uploads/products/<?= htmlspecialchars($product['image']) ?>" 
-                                    class="admin-card__img"
-                                    alt="<?= htmlspecialchars($product['name']) ?>"
-                                >
+                                <div class="admin-card__img-wrapper">
+                                    <img
+                                        src="../../assets/uploads/products/<?= htmlspecialchars($product['image']) ?>" 
+                                        class="admin-card__img"
+                                        alt="<?= htmlspecialchars($product['name']) ?>"
+                                    >
+                                </div>
                             <?php else: ?>
                                 <div class="admin-card__placeholder">
                                     <p><?= $text['no_image_set_to_this_product'] ?></p>
@@ -61,7 +63,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <h5 class="card-title fw-bold admin-card__name">
                                     <?= htmlspecialchars($product['name'])?>
                                 </h5>
-                                <textarea readonly class="card-text text-muted flex-grow-1 description-clamp admin-card__description">
+                                <textarea readonly class="card-text text-muted flex-grow-1 admin-card__description">
                                     <?= htmlspecialchars($product['description']) ?>
                                 </textarea>
                                 <div class="mb-3">
@@ -72,7 +74,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                         <?= htmlspecialchars($product['stock']) ?>
                                     </span>
                                 </div>
-                                <div class="d-flex gap-2">
+                                <div class="d-flex gap-2 admin-card__actions">
                                     <a href="edit.php?id=<?= $product['id'] ?>" 
                                         class="btn btn-sm btn-outline-secondary w-100"> 
                                         <?= $text['edit']?>
