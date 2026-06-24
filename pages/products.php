@@ -29,11 +29,11 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <div class="col">
                             <div class="card h-100 products-card">
                                 <?php if(!empty($product['image'])):?>
-                                    <div class = "card__img-wrapper>
+                                    <div class="card__img-wrapper">
                                         <img src="<?= BASE_URL ?>/assets/uploads/products/<?= htmlspecialchars($product['image']) ?>" class="card-img-top card__img">
                                     </div>
                                 <?php else: ?>
-                                    <div class>
+                                    <div class="card__img-placeholder">
                                         <p class="card-text card__text">
                                             <?= $text['no_image_set_to_this_product'] ?>
                                         </p>
