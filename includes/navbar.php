@@ -31,7 +31,6 @@ require_once __DIR__ . '/../lang/' . $lang . '.php';
                 Admin
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="<?= BASE_URL ?>/admin/index.php"><?= $text['home'] ?></a></li>
                 <li><a class="dropdown-item" href="<?= BASE_URL ?>/admin/dashboard.php"><?= $text['dashboard'] ?></a></li>
                 <li><a class="dropdown-item" href="<?= BASE_URL ?>/admin/products/index.php"><?= $text['products'] ?></a></li>
                 <li><a class="dropdown-item disabled" href="<?= BASE_URL ?>/admin/orders/index.php"><?= $text['orders'] ?></a></li>
