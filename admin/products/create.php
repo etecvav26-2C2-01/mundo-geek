@@ -69,3 +69,7 @@ require_once __DIR__ . '/../../includes/navbar.php';
     </section>
 </main>
 
+<?php 
+require_once __DIR__ . '/../../includes/footer.php';
+?>
+
