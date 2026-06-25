@@ -63,9 +63,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <h5 class="card-title fw-bold admin-card__name">
                                     <?= htmlspecialchars($product['name'])?>
                                 </h5>
-                                <textarea readonly class="card-text text-muted flex-grow-1 admin-card__description">
-                                    <?= htmlspecialchars($product['description']) ?>
-                                </textarea>
+                                <textarea readonly class="card-text text-muted flex-grow-1 admin-card__description"><?= htmlspecialchars($product['description']) ?></textarea>
                                 <div class="mb-3">
                                     <span class="badge text-bg-light admin-card__price">
                                         R$ <?= number_format($product['price'], 2, ',', '.')?>
