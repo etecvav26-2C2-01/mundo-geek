@@ -121,7 +121,7 @@
     margin-top: auto;
 }
 
-.dashboard-card-img{
+.dashboard-card__img{
     width: 100%;
     max-height: 300px;
     object-fit: cover;
