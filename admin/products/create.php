@@ -33,7 +33,7 @@ require_once __DIR__ . '/../../includes/navbar.php';
                 </div>
                 <div class="mb-3">
                     <label for="description" class="form-label"><?= $text['description'] ?></label>
-                    <input type="text" class="form-control" id="description" name = "description" required >
+                    <textarea class="form-control" id="description" name = "description" required></textarea>
                 </div>
                 <div class="mb-3">
                     <label for="price" class="form-label"><?= $text['price'] ?></label>
