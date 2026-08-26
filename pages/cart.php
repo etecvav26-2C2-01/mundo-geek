@@ -17,6 +17,24 @@ if ($id) {
 
 $products = [];
 
+    $sql = "SELECT * FROM products WHERE id = :id";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([':id' => $id]);
+
+    $products[] = $stmt->fetch(PDO::FETCH_ASSOC);
+
+$remove = $_GET['remove'] ?? null;
+
+if ($remove) {
+    $key = array_search($remove, $_SESSION['cart']);
+
+    if ($key !== false) {
+        unset($_SESSION['cart'][$key]);
+    }
+}
+
+$products = [];
+
 foreach ($_SESSION['cart'] as $id) {
     $sql = "SELECT * FROM products WHERE id = :id";
     $stmt = $conn->prepare($sql);
@@ -25,10 +43,9 @@ foreach ($_SESSION['cart'] as $id) {
     $products[] = $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
+
 ?>
-
 <main>
-
     <div class="w-100 d-flex flex-column">
 
         <?php foreach ($products as $product) : ?>
@@ -59,17 +76,16 @@ foreach ($_SESSION['cart'] as $id) {
                                     <a href="product.php?id=<?= $product['id'] ?>" class="flex-grow-1 btn btn-primary w-100 text-nowrap">
                                         <?= $text['details'] ?>
                                     </a>
-                                    <a href="cart.php?add=<?= $product['id'] ?>" class="btn btn-primary text-nowrap">
-                                        <img style="width: 20px;" src="<?= BASE_URL ?>/assets/img/cart.svg">
+
+                                    <a href="cart.php?remove=<?= $product['id'] ?>" class="flex-grow-1 btn btn-primary w-100 text-nowrap">
+                                        <?= $text['delet'] ?>
                                     </a>
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
         <?php endforeach ?>
-
     </div>
-
 </main>

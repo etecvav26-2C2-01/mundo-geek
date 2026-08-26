@@ -42,4 +42,5 @@ $text = [
     'profile' => 'Meu perfil',
     'u-orders' => 'Meus pedidos',
     'settings' => 'Configurações',
+    'delet' => 'Deletar',
 ];
