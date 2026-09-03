@@ -79,7 +79,7 @@ foreach ($_SESSION['cart'] as $id => $qtd) {
                                         <?= $text['details'] ?>
                                     </a>
 
-                                     <p>Quantidade: <?= $_SESSION['cart'][$id] ?></p>
+                                     <p>$text['quantity']: <?= $_SESSION['cart'][$id] ?></p>
                                     
                                     <a href="cart.php?remove=<?= $product['id'] ?>" class="flex-grow-1 btn btn-primary w-100 text-nowrap">
                                         <?= $text['delete'] ?>
