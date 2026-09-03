@@ -82,6 +82,10 @@ if (isset($_POST['btn-edit'])) {
         ':image' => $image,
         ':id' => $id
         ]);
+
+        header("Location: index.php");
+    
+        exit;
 }
 
 
@@ -96,7 +100,7 @@ if (isset($_POST['btn-edit'])) {
 
     <section class="card tf-card">
         <div class="card-body">
-            <form action = "index.php" method = "post" enctype = "multipart/form-data">
+            <form action = "" method = "post" enctype = "multipart/form-data">
                 <div class="mb-3">
                     <label for="name" class="form-label"><?= $text['name'] ?></label>
                     <input type="text" class="form-control" id="name" name = "name" aria-describedby="name" value="<?= $product['name'] ?>">
@@ -139,6 +143,6 @@ if (isset($_POST['btn-edit'])) {
         </div>
     </section>
 </main>
-<?php 
+<?php
 require_once __DIR__ . '/../../includes/footer.php';
 ?>
