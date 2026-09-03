@@ -12,7 +12,12 @@ $id = isset($_GET['add']) ? $_GET['add'] : null;
 $id = $_GET['add'] ?? null;
 
 if ($id) {
-    $_SESSION['cart'][] = $id;
+    if (isset($_SESSION['cart'][$id])) {
+        $_SESSION['cart'][$id]++;
+    } else {
+        $_SESSION['cart'][$id] = 1;
+    }
+    header('Location: '.BASE_URL.'/pages/cart.php');
 }
 
 $products = [];
@@ -25,17 +30,14 @@ $products = [];
 
 $remove = $_GET['remove'] ?? null;
 
-if ($remove) {
-    $key = array_search($remove, $_SESSION['cart']);
-
-    if ($key !== false) {
-        unset($_SESSION['cart'][$key]);
-    }
+if ($remove && isset($_SESSION['cart'][$remove])) {
+    unset($_SESSION['cart'][$remove]);
+    header('Location: '.BASE_URL.'/pages/cart.php');
 }
 
 $products = [];
 
-foreach ($_SESSION['cart'] as $id) {
+foreach ($_SESSION['cart'] as $id => $qtd) {
     $sql = "SELECT * FROM products WHERE id = :id";
     $stmt = $conn->prepare($sql);
     $stmt->execute([':id' => $id]);
@@ -77,6 +79,8 @@ foreach ($_SESSION['cart'] as $id) {
                                         <?= $text['details'] ?>
                                     </a>
 
+                                     <p>Quantidade: <?= $_SESSION['cart'][$id] ?></p>
+                                    
                                     <a href="cart.php?remove=<?= $product['id'] ?>" class="flex-grow-1 btn btn-primary w-100 text-nowrap">
                                         <?= $text['delet'] ?>
                                     </a>
