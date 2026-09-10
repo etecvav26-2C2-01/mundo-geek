@@ -43,4 +43,5 @@ $text = [
     'u-orders' => 'Meus pedidos',
     'settings' => 'Configurações',
     'delete' => 'Deletar',
+    'quantity' => 'Quantidade'
 ];
