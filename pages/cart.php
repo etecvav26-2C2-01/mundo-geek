@@ -29,11 +29,25 @@ $products = [];
     $products[] = $stmt->fetch(PDO::FETCH_ASSOC);
 
 $remove = $_GET['remove'] ?? null;
+$removesingle = $_GET['removesingle'] ?? null;
 
 if ($remove && isset($_SESSION['cart'][$remove])) {
     unset($_SESSION['cart'][$remove]);
     header('Location: '.BASE_URL.'/pages/cart.php');
 }
+
+if ($removesingle && isset($_SESSION['cart'][$removesingle])) {
+    $_SESSION['cart'][$removesingle]--;
+        
+    
+    if ($_SESSION['cart'][$removesingle] <= 0) {
+         unset($_SESSION['cart'][$removesingle]);
+    }
+        
+    header('Location: ' . BASE_URL . '/pages/cart.php');
+    exit;
+}
+
 
 $products = [];
 
@@ -83,7 +97,14 @@ foreach ($_SESSION['cart'] as $id => $qtd) {
                                     <a href="cart.php?remove=<?= $product['id'] ?>" class="flex-grow-1 btn btn-primary w-100 text-nowrap">
                                         <?= $text['delete'] ?>
                                     </a>
-
+                                     <a href="cart.php?add=<?= $product['id'] ?>" class="btn btn-primary w-100 text-nowrap">
+                                        <p>+</p>
+                                    </a>
+        
+                                    <a href="cart.php?removesingle=<?= $product['id'] ?>" class ="btn btn-primary w-100 text-nowrap">
+                                        <p>-</p>
+                                    </a>
+                                    
                                 </div>
                             </div>
                         </div>
