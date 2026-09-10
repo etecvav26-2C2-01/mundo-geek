@@ -63,7 +63,13 @@ foreach ($_SESSION['cart'] as $id => $qtd) {
 ?>
 <main>
     <div class="w-100 d-flex flex-column">
-
+    
+    <?php if(empty($products)): ?>
+        <div class="text-center py-5">
+            <h3><?= $text['no_product_found'] ?></h3>
+        </div>
+        <?php else: ?>
+    
         <?php foreach ($products as $product) : ?>
 
                 <div class="w-100 flex-row">
@@ -104,12 +110,12 @@ foreach ($_SESSION['cart'] as $id => $qtd) {
                                     <a href="cart.php?removesingle=<?= $product['id'] ?>" class ="btn btn-primary w-100 text-nowrap">
                                         <p>-</p>
                                     </a>
-                                    
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-        <?php endforeach ?>
+            <?php endforeach ?>
+        <?php endif ?>
     </div>
 </main>
