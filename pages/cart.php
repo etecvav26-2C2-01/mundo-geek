@@ -8,6 +8,10 @@ require_once __DIR__ . '/../includes/auth.php';
 require_once __DIR__ . '/../includes/header.php';
 require_once __DIR__ . '/../includes/navbar.php';
 
+if (!isset($_SESSION['cart']) || !is_array($_SESSION['cart'])) {
+    $_SESSION['cart'] = [];
+}
+
 $id = isset($_GET['add']) ? $_GET['add'] : null;
 $id = $_GET['add'] ?? null;
 
