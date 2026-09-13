@@ -42,6 +42,6 @@ $text = [
     'profile' => 'Meu perfil',
     'u-orders' => 'Meus pedidos',
     'settings' => 'Configurações',
-    'delete' => 'Deletar',
-    'quantity' => 'Quantidade'
+    'quantity' => 'Quantidade',
+    'featured_products' => 'Produtos em destaque'
 ];

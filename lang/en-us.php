@@ -43,7 +43,7 @@ $text = [
     'profile' => 'My profile',
     'u-orders' => 'My orders',
     'settings' => 'Settings',
-    'delete' =>  'Delete',
-    'quantity' => 'Quantity'
+    'quantity' => 'Quantity',
+    'featured_products' => 'Featured products'
     ]
 ?>
