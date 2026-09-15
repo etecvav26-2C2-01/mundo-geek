@@ -176,6 +176,15 @@
     text-overflow: ellipsis; /* Adiciona "..." no final */
 }
 
+#featuredProductsCarousel .carousel-control-prev,
+#featuredProductsCarousel .carousel-control-next {
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.500) !important;
+    border-radius: 50%;
+}
+
 @media (min-width: 768px) {
     .product-detail__img-wrapper img{
         max-width: 500px;
