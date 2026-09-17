@@ -20,6 +20,10 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <main>
+    <section class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+        <a href = "create.php" class = "btn btn-primary "><?= $text['create_user'] ?></a>
+    </section>
+        
     <section class="card tf-card">
         <div class="card-body">
             <div class="row g-4">
