@@ -20,10 +20,10 @@ $total_orders = 0;
 
 ?>
 
-    <main class="container min-vh-100 d-flex justify-content-center py-4">
+    <main class="min-vh-100 d-flex justify-content-center py-4">
         <section class="row g-4 w-100 h-100">
 
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-4">
                 <div class="card dashboard-card dashboard-card--products w-100 rounded-bottom-4">
                     <img src="<?= BASE_URL ?>/assets/img/products-menu-top.png" class="card-img-top dashboard-card__img" alt="Products menu">
                     <div class="card-body dashboard-card__body">
@@ -36,7 +36,7 @@ $total_orders = 0;
                 </div>
             </div>
 
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-4">
                 <div class="card dashboard-card dashboard-card--orders w-100 rounded-bottom-4">
                     <img src="<?= BASE_URL ?>/assets/img/orders-banner.png" class="card-img-top dashboard-card__img" alt="Orders menu">
                     <div class="card-body dashboard-card__body">
@@ -45,6 +45,19 @@ $total_orders = 0;
                     </div>
                     <a href="<?= BASE_URL ?>/admin/orders/index.php" class="btn btn-secondary dashboard-card__actions w-100 text-nowrap rounded-bottom-4 rounded-top-0 disabled">
                         <?= $text['soon'] ?>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="card dashboard-card dashboard-card--products w-100 rounded-bottom-4">
+                    <img src="<?= BASE_URL ?>/assets/img/products-menu-top.png" class="card-img-top dashboard-card__img" alt="Users menu">
+                    <div class="card-body dashboard-card__body">
+                        <h3><?= $text['users'] ?></h3>
+                        <p><?= $text['there_are_currently'] ?> <?= $total_products ?> <?= $text['registered_users'] ?>.</p>
+                    </div>
+                    <a href="<?= BASE_URL ?>/admin/users/index.php" class="btn btn-primary dashboard-card__actions w-100 text-nowrap rounded-bottom-4 rounded-top-0">
+                        <?= $text['manage'] ?>
                     </a>
                 </div>
             </div>
