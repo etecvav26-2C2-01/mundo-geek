@@ -19,26 +19,26 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
-<main>
+<main class="min-vh-100">
     <section class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
-        <a href = "create.php" class = "btn btn-primary "><?= $text['create_user'] ?></a>
+        <a href = "create.php" class = "btn btn-primary m-4"><?= $text['create_user'] ?></a>
     </section>
         
-    <section class="card tf-card">
+    <section>
         <div class="card-body">
             <div class="row g-4">
                 <?php foreach ($users as $user): ?>
                     <div class="col-12 col-md-6 col-lg-4">
-                        <article class="card tf-card h-100 admin-card">
+                        <article class="card h-100 admin-card">
                             <div class="card-body d-flex flex-column admin-card__body">
                                 <h5 class="card-title fw-bold admin-card__username">
-                                    username: <?= htmlspecialchars($user['username'])?>
+                                    <?= $text['username'] ?>: <?= htmlspecialchars($user['username'])?>
                                 </h5>
                                 <h5 class="card-title fw-bold admin-card__id">
-                                    id: <?= number_format($user['id'])?>
+                                    <?= $text['id'] ?>: <?= number_format($user['id'])?>
                                 </h5>
                                 <h5 class="card-title fw-bold admin-card__role">
-                                    role: <?= htmlspecialchars($user['role']) ?>
+                                    <?= $text['role'] ?>: <?= htmlspecialchars($user['role']) ?>
                                 </h5>
                                 </div>
                                 <div class="d-flex gap-2 admin-card__actions">
