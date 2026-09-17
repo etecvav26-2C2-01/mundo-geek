@@ -25,7 +25,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <h1><?= $text['products'] ?></h1>
             <p><?= $text['products_management'] ?></p>
         </div>
-        <a href = "create.php" class = "btn tf-btn-primary"><?= $text['new_product'] ?></a>
+        <a href = "create.php" class = "btn btn-primary"><?= $text['new_product'] ?></a>
     </section>
 
     <section class="card tf-card">
