@@ -18,6 +18,14 @@ $stmt->execute();
 $total_products = $stmt->fetchColumn();
 $total_orders = 0;
 
+$sql = "SELECT COUNT(*)
+        FROM users ";
+
+$stmt = $conn->prepare($sql);
+$stmt->execute();
+
+$total_users = $stmt->fetchColumn();
+
 ?>
 
     <main class="min-vh-100 d-flex justify-content-center py-4">
@@ -54,7 +62,7 @@ $total_orders = 0;
                     <img src="<?= BASE_URL ?>/assets/img/products-menu-top.png" class="card-img-top dashboard-card__img" alt="Users menu">
                     <div class="card-body dashboard-card__body">
                         <h3><?= $text['users'] ?></h3>
-                        <p><?= $text['there_are_currently'] ?> <?= $total_products ?> <?= $text['registered_users'] ?>.</p>
+                        <p><?= $text['there_are_currently'] ?> <?= $total_users ?> <?= $text['registered_users'] ?>.</p>
                     </div>
                     <a href="<?= BASE_URL ?>/admin/users/index.php" class="btn btn-primary dashboard-card__actions w-100 text-nowrap rounded-bottom-4 rounded-top-0">
                         <?= $text['manage'] ?>
