@@ -28,7 +28,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <a href = "create.php" class = "btn btn-primary"><?= $text['new_product'] ?></a>
     </section>
 
-    <section class="card tf-card">
+    <section>
         <div class="card-body">
             
             <?php if(empty($products)): ?>
