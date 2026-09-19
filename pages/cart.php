@@ -71,7 +71,11 @@ foreach ($_SESSION['cart'] as $id => $qtd) {
     <?php if(empty($products)): ?>
         <div class="text-center py-5">
             <h3><?= $text['no_product_found'] ?></h3>
+            <a href="<?= BASE_URL ?>/pages/products.php" class="btn btn-primary mt-3">
+                <?= $text['go_to_products'] ?>
+            </a>
         </div>
+        
         <?php else: ?>
     
         <?php foreach ($products as $product) : ?>
