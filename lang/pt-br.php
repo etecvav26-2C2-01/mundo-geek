@@ -48,5 +48,6 @@ $text = [
     'users' => 'Usuários',
     'settings' => 'Configurações',
     'quantity' => 'Quantidade',
-    'featured_products' => 'Produtos em destaque'
+    'featured_products' => 'Produtos em destaque',
+    'go_to_products'=> 'Ir para produtos'
 ];
