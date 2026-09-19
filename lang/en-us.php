@@ -44,6 +44,7 @@ $text = [
     'u-orders' => 'My orders',
     'settings' => 'Settings',
     'quantity' => 'Quantity',
-    'featured_products' => 'Featured products'
+    'featured_products' => 'Featured products',
+    'go_to_products' => 'Go to products'
     ]
 ?>
