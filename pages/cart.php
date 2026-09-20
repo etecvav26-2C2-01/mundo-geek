@@ -101,7 +101,12 @@ foreach ($_SESSION['cart'] as $id => $qtd) {
                             <p class="card-text card__price">
                                 R$ <?= htmlspecialchars($product['price']) ?>
                             </p>
-                            <p> <?= $text['quantity']?> : <?= $_SESSION['cart'][$id] ?></p>
+                            <p> 
+                                <?= $text['quantity']?> : <?= $_SESSION['cart'][$product['id']] ?>
+                            </p>
+                            <p>
+                                <?=  $text['total_price'] ?> : R$ <?= number_format($product['price'] * $_SESSION['cart'][$product['id']], 2, ',', '.') ?>
+                            </p>
                             <div class="card__actions">
                                 <div class="d-flex gap-2 mt-3">
                                     <a href="product.php?id=<?= $product['id'] ?>" class="flex-grow-1 btn btn-primary w-100 text-nowrap">
