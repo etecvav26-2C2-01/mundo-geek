@@ -102,6 +102,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             </form>
 
+            <p class="text-center mb-3">
+                <?= $text['no_account']?>
+                <a href="signup.php"><?= $text['signup'] ?></a>
+            </p>
+
             <div class="d-flex justify-content-center gap-2">
                 <a href="?lang=en-us" class="btn btn-sm btn-outline-secondary">
                     EN
