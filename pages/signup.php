@@ -104,6 +104,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             </form>
 
+            <p class="text-center mb-3">
+                <?= $text['have_account']?>
+                <a href="login.php"><?= $text['login'] ?></a>
+            </p>
+
             <div class="d-flex justify-content-center gap-2">
                 <a href="?lang=en-us" class="btn btn-sm btn-outline-secondary">EN</a>
                 <a href="?lang=pt-br" class="btn btn-sm btn-outline-secondary">PT</a>
