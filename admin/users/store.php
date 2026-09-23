@@ -24,7 +24,7 @@ try{
         ':role' => $role
     ]);
 } catch (PDOException $e){
-    $errorMessage = $text['error_signup'];
+    $errorMessage = $text['create_error'];
  }
 ?>
 
