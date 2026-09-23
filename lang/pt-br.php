@@ -50,5 +50,7 @@ $text = [
     'quantity' => 'Quantidade',
     'featured_products' => 'Produtos em destaque',
     'go_to_products' => 'Ir para produtos',
-    'total_price' => 'Preço total'
+    'total_price' => 'Preço total',
+    'no_account' => 'Ainda não possui uma conta?',
+    'have_account' => 'Já possui cadastro?'
 ];
