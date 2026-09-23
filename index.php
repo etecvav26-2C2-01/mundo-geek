@@ -8,7 +8,7 @@ require_once __DIR__ . '/includes/navbar.php';
 $sql = "SELECT id, name, description, price, image, stock
         FROM products
         ORDER BY name ASC
-        LIMIT 10";
+        LIMIT 12";
 
 $stmt = $conn->prepare($sql);
 $stmt->execute();
