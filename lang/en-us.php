@@ -53,6 +53,8 @@ $text = [
     'quantity' => 'Quantity',
     'featured_products' => 'Featured products',
     'go_to_products' => 'Go to products',
-    'total_price' => 'Total price'
+    'total_price' => 'Total price',
+    'no_account' => "Don't have an account yet?",
+    'have_account' => 'Do you already have an account?'
     ]
 ?>
