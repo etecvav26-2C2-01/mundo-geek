@@ -41,7 +41,7 @@ if (isset($_POST['btn-edit'])) {
             ':role' => $role
         ]);
     } catch (PDOException $e){
-        $errorMessage = $text['error_signup'];
+        $errorMessage = $text['edit_error'];
      } 
      ?>
 
