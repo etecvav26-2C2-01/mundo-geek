@@ -23,6 +23,7 @@ $text = [
     'no_image' => 'No Image',
     'edit' => 'Edit',
     'edit_error' => 'This username is already taken',
+    'create_error' => 'This username is already taken',
     'delete' => 'Delete',
     'confirm_delete' => 'Confirm Delete',
     'no_image_set_to_this_product' => 'No image set to this product',
