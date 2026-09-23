@@ -65,7 +65,7 @@ foreach ($_SESSION['cart'] as $id => $qtd) {
 
 
 ?>
-<main>
+<main class="min-vh-100">
     <div class="w-100 d-flex flex-column">
     
     <?php if(empty($products)): ?>
@@ -132,3 +132,5 @@ foreach ($_SESSION['cart'] as $id => $qtd) {
         <?php endif ?>
     </div>
 </main>
+
+<?php require_once __DIR__ . '/../includes/footer.php'; ?>
