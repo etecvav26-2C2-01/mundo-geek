@@ -50,7 +50,7 @@ $text = [
     'settings' => 'Settings',
     'quantity' => 'Quantity',
     'featured_products' => 'Featured products',
-    'go_to_products' => 'Go to products'
+    'go_to_products' => 'Go to products',
     'total_price' => 'Total price'
     ]
 ?>
