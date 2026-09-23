@@ -49,5 +49,6 @@ $text = [
     'settings' => 'Configurações',
     'quantity' => 'Quantidade',
     'featured_products' => 'Produtos em destaque',
-    'go_to_products'=> 'Ir para produtos'
+    'go_to_products' => 'Ir para produtos',
+    'total_price' => 'Preço total'
 ];
