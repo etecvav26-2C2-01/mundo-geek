@@ -25,25 +25,36 @@ if (isset($_GET['id'])){
 }
 
 if (isset($_POST['btn-edit'])) {
-        
-    $id = $_GET['id'];
-
-    $username = trim($_POST['username']);
-    $role = trim($_POST['role']);
-
-    $sql = "UPDATE users SET username = :username, role = :role Where id = :id";
-
-    $stmt = $conn->prepare($sql);
-
-    $stmt->execute([
-        ':id' => $id,
-        ':username' => $username,
-        ':role' => $role
-    ]);
-
-    header("Location: index.php");
+    try{    
+        $id = $_GET['id'];
     
-    exit;
+        $username = trim($_POST['username']);
+        $role = trim($_POST['role']);
+    
+        $sql = "UPDATE users SET username = :username, role = :role Where id = :id";
+    
+        $stmt = $conn->prepare($sql);
+    
+        $stmt->execute([
+            ':id' => $id,
+            ':username' => $username,
+            ':role' => $role
+        ]);
+    } catch (PDOException $e){
+        $errorMessage = $text['error_signup'];
+     } 
+     ?>
+
+    <?php if (!empty($errorMessage)): ?>
+        <div class="alert alert-danger">
+            <p><?= htmlspecialchars($errorMessage) ?></p>
+        </div>
+    <?php else: ?>
+        <?php 
+        header('location: index.php');
+        exit; 
+        ?>
+    <?php endif; 
 }
 
 ?>
