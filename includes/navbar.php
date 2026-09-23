@@ -26,6 +26,9 @@ require_once __DIR__ . '/../lang/' . $lang . '.php';
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="<?= BASE_URL ?>/index.php"><?= $text['home']?></a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="<?= BASE_URL ?>/pages/products.php"><?= $text['products']?></a>
+            </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Admin
