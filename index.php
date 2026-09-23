@@ -8,13 +8,15 @@ require_once __DIR__ . '/includes/navbar.php';
 $sql = "SELECT id, name, description, price, image, stock
         FROM products
         ORDER BY name ASC
-        LIMIT 5";
+        LIMIT 10";
 
 $stmt = $conn->prepare($sql);
 $stmt->execute();
 
 $featuredProducts = $stmt->fetchAll(PDO::FETCH_ASSOC);
-$productGroups = array_chunk($featuredProducts, 1);
+$group1 = array_chunk($featuredProducts, 1);
+$group2 = array_chunk($featuredProducts, 2);
+$group3 = array_chunk($featuredProducts, 4);
 
 ?>
 
@@ -54,11 +56,11 @@ $productGroups = array_chunk($featuredProducts, 1);
 <section class="container py-4">
   <h2><?= $text['featured_products'] ?></h2>
 
-  <div id="featuredProductsCarousel" class="carousel slide" data-bs-ride="false">
+  <div id="carousel1" class="carousel slide d-block d-sm-none" data-bs-ride="false">
     <div class="carousel-inner">
-      <?php foreach ($productGroups as $index => $group): ?>
+      <?php foreach ($group1 as $index => $group): ?>
         <div class="carousel-item <?= $index === 0 ? 'active' : '' ?>">
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-4">
+          <div class="row row-cols-1">
             <?php foreach ($group as $product): ?>
               <div class="col">
                 <div class="card h-100 products-card">
@@ -101,15 +103,131 @@ $productGroups = array_chunk($featuredProducts, 1);
       <?php endforeach; ?>
     </div>
 
-    <button class="carousel-control-prev" type="button" data-bs-target="#featuredProductsCarousel" data-bs-slide="prev">
+    <button class="carousel-control-prev" type="button" data-bs-target="#carousel1" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#featuredProductsCarousel" data-bs-slide="next">
+    <button class="carousel-control-next" type="button" data-bs-target="#carousel1" data-bs-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
   </div>
+
+  <div id="carousel2" class="carousel slide d-none d-sm-block d-lg-none" data-bs-ride="false">
+    <div class="carousel-inner">
+      <?php foreach ($group2 as $index => $group): ?>
+        <div class="carousel-item <?= $index === 0 ? 'active' : '' ?>">
+          <div class="row row-cols-2">
+            <?php foreach ($group as $product): ?>
+              <div class="col">
+                <div class="card h-100 products-card">
+                  <?php if (!empty($product['image'])): ?>
+                    <div class="card__img-wrapper">
+                      <img src="<?= BASE_URL ?>/assets/uploads/products/<?= htmlspecialchars($product['image']) ?>"
+                        class="card-img-top card__img">
+                    </div>
+                  <?php else: ?>
+                    <div class="card__img-placeholder">
+                      <p class="card-text card__text">
+                        <?= $text['no_image_set_to_this_product'] ?>
+                      </p>
+                    </div>
+                  <?php endif; ?>
+
+                  <div class="card-body card__body">
+                    <h5 class="card-title card__name">
+                      <?= htmlspecialchars($product['name']) ?>
+                    </h5>
+                    <p class="card-text card__price">
+                      R$ <?= htmlspecialchars($product['price']) ?>
+                    </p>
+                    <div class="card__actions">
+                      <div class="d-flex gap-2 mt-3">
+                        <a href="pages/product.php?id=<?= $product['id'] ?>" class="flex-grow-1 btn btn-primary w-100 text-nowrap">
+                          <?= $text['details'] ?>
+                        </a>
+                        <a href="pages/cart.php?add=<?= $product['id'] ?>" class="btn btn-primary text-nowrap">
+                          <img style="width: 20px;" src="<?= BASE_URL ?>/assets/img/cart.svg">
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <?php endforeach; ?>
+          </div>
+        </div>
+      <?php endforeach; ?>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carousel2" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carousel2" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <div id="carousel3" class="carousel slide d-none d-lg-block" data-bs-ride="false">
+    <div class="carousel-inner">
+      <?php foreach ($group3 as $index => $group): ?>
+        <div class="carousel-item <?= $index === 0 ? 'active' : '' ?>">
+          <div class="row row-cols-4">
+            <?php foreach ($group as $product): ?>
+              <div class="col">
+                <div class="card h-100 products-card">
+                  <?php if (!empty($product['image'])): ?>
+                    <div class="card__img-wrapper">
+                      <img src="<?= BASE_URL ?>/assets/uploads/products/<?= htmlspecialchars($product['image']) ?>"
+                        class="card-img-top card__img">
+                    </div>
+                  <?php else: ?>
+                    <div class="card__img-placeholder">
+                      <p class="card-text card__text">
+                        <?= $text['no_image_set_to_this_product'] ?>
+                      </p>
+                    </div>
+                  <?php endif; ?>
+
+                  <div class="card-body card__body">
+                    <h5 class="card-title card__name">
+                      <?= htmlspecialchars($product['name']) ?>
+                    </h5>
+                    <p class="card-text card__price">
+                      R$ <?= htmlspecialchars($product['price']) ?>
+                    </p>
+                    <div class="card__actions">
+                      <div class="d-flex gap-2 mt-3">
+                        <a href="pages/product.php?id=<?= $product['id'] ?>" class="flex-grow-1 btn btn-primary w-100 text-nowrap">
+                          <?= $text['details'] ?>
+                        </a>
+                        <a href="pages/cart.php?add=<?= $product['id'] ?>" class="btn btn-primary text-nowrap">
+                          <img style="width: 20px;" src="<?= BASE_URL ?>/assets/img/cart.svg">
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <?php endforeach; ?>
+          </div>
+        </div>
+      <?php endforeach; ?>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carousel3" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carousel3" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
 </section>
 
 <?php require_once __DIR__ . '/includes/footer.php'; ?>
