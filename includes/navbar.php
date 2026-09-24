@@ -59,7 +59,7 @@ require_once __DIR__ . '/../lang/' . $lang . '.php';
                   <img class="profile-img" src="<?= BASE_URL ?>/assets/img/icon.png" alt="Perfil">
               </a>
 
-              <ul class="dropdown-menu dropdown-menu-end">
+              <ul class="dropdown-menu dropdown-menu-lg-end">
                   <li><a class="dropdown-item disabled" href="profile.php"><?= $text['profile'] ?></a></li>
                   <li><a class="dropdown-item disabled" href="u-requests.php"><?= $text['u-orders'] ?></a></li>
                   <li><a class="dropdown-item disabled" href="settings.php"><?= $text['settings'] ?></a></li>
